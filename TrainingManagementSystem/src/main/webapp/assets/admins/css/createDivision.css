@@ -1,0 +1,34 @@
+@charset "ISO-8859-1";
+
+.addDivision {
+	color: white;
+}
+
+.createDivisionForm input {
+	border: 2px solid #2B4865 !important;
+	background: #CFD2CF;
+}
+.createDivisionForm input:focus {
+	
+	background: #CFD2CF !important;
+}
+
+
+.createDivisionForm label {
+	font-size: 20px;
+	color: #fff;
+}
+
+
+.submitCreateDivision {
+	border-radius: 20px;
+	font-size:20px;
+	color: white;
+	background: #F94C66 !important;
+}
+
+.submitCreateDivision:hover {
+	
+	color: white;
+	background: #F94C66 !important;
+}

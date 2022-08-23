@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-    <title>TMS</title>
+    <title>TMS Admin</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -36,7 +36,7 @@
 
 <div class="container-fluid position-relative d-flex p-0">
 	<%@ include file="/WEB-INF/views/layouts/users-components/spinner.jsp" %>
-	<%@ include file="/WEB-INF/views/layouts/users-components/sidebar.jsp"%>
+	<%@ include file="/WEB-INF/views/layouts/admins-components/sidebar.jsp"%>
 	<div class="content">
 		<%@ include file="/WEB-INF/views/layouts/users-components/navbar.jsp"%>
 		<decorator:body />

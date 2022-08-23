@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Thêm bộ phận</title>
+
+
+</head>
+<body>
+
+	<div class="container mt-3">
+
+		<h1 class="text-center addDivision">Thêm bộ phận</h1>
+		<form:form action="/TrainingManagementSystem/admin/createDivision"
+			method="POST" modelAttribute="division"
+			class="createDivisionForm">
+			<form:hidden path="id" />
+			<form:label path="name">Tên:</form:label>
+			<form:input path="name" class="form-control"/>
+			<br />
+			<form:label  path="description">Mô tả:</form:label>
+			<form:input path="description" class="form-control"/>
+			<br/>
+			<form:label path="manager.id">Manager ID:</form:label>
+			<form:input path="manager.id" class="form-control"/>
+			<br/>
+			<button type="submit" class="btn btn-info d-grid gap-2 col-4 mx-auto submitCreateDivision mt-5">Tạo</button>
+		</form:form>
+
+	</div>
+
+</body>
+</html>
