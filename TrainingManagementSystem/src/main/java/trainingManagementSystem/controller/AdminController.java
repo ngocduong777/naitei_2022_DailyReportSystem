@@ -25,18 +25,7 @@ public class AdminController {
 		return "admins/index";
 	}
 	
-	@RequestMapping(value = { "/admin/AddNewDivision" }, method = RequestMethod.GET)
-	public String AddNewDivision(ModelMap model) {
-		model.addAttribute("division", new Division());
-		return "admins/createDivision";
-	}
 	
-	//Add a Division
-	@RequestMapping(value = { "/admin/createDivision" }, method = RequestMethod.POST)
-	public String saveDivision(ModelMap model, @ModelAttribute("division") Division division) {
-
-		divisionService.saveDivision(division);
-		model.addAttribute("message", "Success adding division!");
-		return "redirect:/admin";
-	}
+	
+	
 }

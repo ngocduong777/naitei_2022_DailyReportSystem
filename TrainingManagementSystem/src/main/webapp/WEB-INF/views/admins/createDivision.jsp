@@ -4,6 +4,8 @@
 
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="baseURL" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +19,7 @@
 	<div class="container mt-3">
 
 		<h1 class="text-center addDivision">Thêm bộ phận</h1>
-		<form:form action="/TrainingManagementSystem/admin/createDivision"
+		<form:form action="${baseURL}/admin/createDivision"
 			method="POST" modelAttribute="division"
 			class="createDivisionForm">
 			<form:hidden path="id" />

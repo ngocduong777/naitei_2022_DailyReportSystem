@@ -4,6 +4,8 @@
 
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="baseURL" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +21,7 @@
 		
 
 
-		<h3 class="mb-5 mt-5 addDivisionButton"><a href="/TrainingManagementSystem/admin/AddNewDivision"><i class="fas fa-plus"></i> Thêm bộ phận</a></h3>
+		<h3 class="mb-5 mt-5 addDivisionButton"><a href="${baseURL}/admin/AddNewDivision"><i class="fas fa-plus"></i> Thêm bộ phận</a></h3>
 		<table class="table table-striped table-dark">
 			<thead>
 				<tr>
