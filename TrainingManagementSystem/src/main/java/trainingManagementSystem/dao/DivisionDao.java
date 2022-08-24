@@ -32,6 +32,12 @@ public class DivisionDao {
 		return hibernateTemplate.get(Division.class, divisionId);
 	}
 
+	// save division
+	@Transactional
+	public void saveDivision(Division division) {
+		hibernateTemplate.save(division);
+	}
+
 	// pagination reports
 	public List<Report> paginationReports(int divisionId, int pageNumber, int pageSize) {
 		try (Session session = hibernateTemplate.getSessionFactory().openSession()) {
@@ -39,8 +45,7 @@ public class DivisionDao {
 			CriteriaQuery<Report> criteriaQuery = criteriaBuilder.createQuery(Report.class);
 			Root<Report> root = criteriaQuery.from(Report.class);
 			CriteriaQuery<Report> selectQuery = criteriaQuery.select(root);
-			selectQuery = selectQuery
-					.where(criteriaBuilder.equal(root.get("user").get("division"), divisionId));
+			selectQuery = selectQuery.where(criteriaBuilder.equal(root.get("user").get("division"), divisionId));
 
 			TypedQuery<Report> typedQuery = session.createQuery(selectQuery);
 			typedQuery.setFirstResult(pageNumber * pageSize);

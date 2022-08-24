@@ -23,6 +23,15 @@ public class DivisionServices {
 		}
 	}
 
+	// save division
+	public void saveDivision(Division division) {
+		try {
+			divisionDao.saveDivision(division);
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
 	// get by id
 	public Division getById(int id) {
 		try {
