@@ -22,6 +22,7 @@
 
 
 		<h3 class="mb-5 mt-5 addDivisionButton">
+
 			<a href="${baseURL}/admin/divisions/new"><i class="fas fa-plus"></i>
 				Thêm bộ phận</a>
 		</h3>
