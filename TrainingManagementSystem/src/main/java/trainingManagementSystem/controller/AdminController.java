@@ -40,8 +40,6 @@ public class AdminController {
 		return "admins/getUsersOfDivision";
 	}
 
-	// Add a Division
-
 	@RequestMapping(value = { "/admin/divisions/create" }, method = RequestMethod.POST)
 	public String saveDivision(ModelMap model, @ModelAttribute("division") Division division) {
 		division.setManager(userServices.getById(division.getManager().getId(), null));
@@ -54,7 +52,7 @@ public class AdminController {
 	@RequestMapping(value = { "/admin/divisions/remove" })
 	public String RemoveDivision(@RequestParam int id, @ModelAttribute("division") Division division) {
 		divisionService.getById(id);
-		divisionService.deleteDivision(id); 
+		divisionService.deleteDivision(id);
 		return "redirect:/admin";
 
 	}
