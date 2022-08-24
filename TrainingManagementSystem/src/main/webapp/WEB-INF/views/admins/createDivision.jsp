@@ -19,20 +19,33 @@
 	<div class="container mt-3">
 
 		<h1 class="text-center addDivision">Thêm bộ phận</h1>
-		<form:form action="${baseURL}/admin/createDivision"
-			method="POST" modelAttribute="division"
-			class="createDivisionForm">
+		<form:form action="${baseURL}/admin/divisions/create" method="POST"
+			modelAttribute="division" class="createDivisionForm">
 			<form:hidden path="id" />
 			<form:label path="name">Tên:</form:label>
-			<form:input path="name" class="form-control"/>
+			<form:input path="name" class="form-control" />
 			<br />
-			<form:label  path="description">Mô tả:</form:label>
-			<form:input path="description" class="form-control"/>
-			<br/>
+			<form:label path="description">Mô tả:</form:label>
+			<form:input path="description" class="form-control" />
+			<br />
+			
+
 			<form:label path="manager.id">Manager ID:</form:label>
-			<form:input path="manager.id" class="form-control"/>
-			<br/>
-			<button type="submit" class="btn btn-info d-grid gap-2 col-4 mx-auto submitCreateDivision mt-5">Tạo</button>
+			<form:select path="manager.id">
+				<c:forEach items="${loadUsersNotinManagerID}" var="firstVar">
+					<form:option value="${firstVar}" label="${firstVar}" />
+				</c:forEach>
+			</form:select>
+
+			<br />
+
+
+
+
+
+			<br />
+			<button type="submit"
+				class="btn btn-info d-grid gap-2 col-4 mx-auto submitCreateDivision mt-5">Tạo</button>
 		</form:form>
 
 	</div>

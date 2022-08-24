@@ -16,23 +16,23 @@
 
 	<div class="container mt-3">
 
-		
+
 		<h1 class="text-center">Danh sách các bộ phận</h1>
-		
 
 
-		<h3 class="mb-5 mt-5 addDivisionButton"><a href="${baseURL}/admin/AddNewDivision"><i class="fas fa-plus"></i> Thêm bộ phận</a></h3>
+
+		<h3 class="mb-5 mt-5 addDivisionButton">
+			<a href="${baseURL}/admin/divisions/new"><i class="fas fa-plus"></i>
+				Thêm bộ phận</a>
+		</h3>
 		<table class="table table-striped table-dark">
 			<thead>
 				<tr>
 					<th scope="col">ID</th>
 					<th scope="col">Tên</th>
-					<th scope="col">Mô tả</th>
 					<th scope="col">Manager ID</th>
+					<th scope="col">Hành động</th>
 					<th scope="col"></th>
-					<th scope="col"></th>
-					
-
 				</tr>
 			</thead>
 			<tbody>
@@ -40,15 +40,13 @@
 					<tr>
 						<th scope="row">${division.id}</th>
 						<td>${division.name}</td>
-						<td>${division.description}</td>
 						<td>${division.getManager().getId()}</td>
-						<td>Sửa <i class="fas fa-edit"></i></td>
-						<td>Xóa <i class="fas fa-trash-alt"></i></td>
-
+						<td><i class="fas fa-edit EditIcon me-3"></i> <i
+							class="fas fa-trash-alt TrashIcon"></i></td>
+						<td><a class="btn btn-warning seeDetailButton" href="#"
+							role="button">Xem chi tiết <i class="fas fa-eye"></i></a></td>
 					</tr>
 				</c:forEach>
-
-
 			</tbody>
 		</table>
 	</div>

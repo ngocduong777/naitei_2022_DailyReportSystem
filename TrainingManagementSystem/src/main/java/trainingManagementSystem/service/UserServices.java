@@ -1,7 +1,8 @@
 package trainingManagementSystem.service;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -58,6 +59,14 @@ public class UserServices {
 			userDao.deleteUser(id);
 		} catch (Exception e) {
 			throw e;
+		}
+	}
+
+	public List<Object[]> loadUsersNotinManagerID() {
+		try {
+			return userDao.loadUsersNotinManagerID();
+		} catch (Exception e) {
+			return Collections.emptyList();
 		}
 	}
 

@@ -23,17 +23,8 @@ public class DivisionServices {
 		}
 	}
 
-	// save division
-	public void saveDivision(Division division) {
-		try {
-			divisionDao.saveDivision(division);
-		} catch (Exception e) {
-			throw e;
-		}
-	}
-
 	// get by id
-	public Division getById(int id) {
+	public Division getById(Integer id) {
 		try {
 			return divisionDao.getById(id);
 		} catch (Exception e) {
@@ -49,4 +40,13 @@ public class DivisionServices {
 			return null;
 		}
 	}
+	// save division
+	public void saveDivision(Division division) {
+		try {
+			divisionDao.saveDivision(division);
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
 }
