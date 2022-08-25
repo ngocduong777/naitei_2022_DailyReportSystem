@@ -39,7 +39,7 @@ public class AdminController {
 		model.addAttribute("getDivisionById", divisionService.getById(id));
 		return "admins/getUsersOfDivision";
 	}
-
+	// Add a Division
 	@RequestMapping(value = { "/admin/divisions/create" }, method = RequestMethod.POST)
 	public String saveDivision(ModelMap model, @ModelAttribute("division") Division division) {
 		division.setManager(userServices.getById(division.getManager().getId(), null));

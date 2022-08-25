@@ -67,7 +67,6 @@ public class UserServices {
 			return userDao.loadUsersNotinManagerID();
 		} catch (Exception e) {
 			return Collections.emptyList();
-
 		}
 	}
 

@@ -69,7 +69,6 @@
 		</div>
 	</div>
 
-
 	<script>
 		// Search function
 		$("#searchInput").on("input", function(e) {
@@ -96,5 +95,6 @@
 			return str;
 		}
 	</script>
+
 </body>
 </html>
