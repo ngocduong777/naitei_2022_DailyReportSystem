@@ -8,6 +8,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import trainingManagementSystem.model.Division;
 import trainingManagementSystem.model.User;
@@ -39,9 +40,8 @@ public class AdminController {
 	//Add a Division
 	@RequestMapping(value = { "/admin/divisions/create" }, method = RequestMethod.POST)
 	public String saveDivision(ModelMap model, @ModelAttribute("division") Division division) {
-
+		division.setManager(userServices.getById(division.getManager().getId(), null));
 		divisionService.saveDivision(division);
-		
 		model.addAttribute("message", "Success adding division!");
 		return "redirect:/admin";
 	}

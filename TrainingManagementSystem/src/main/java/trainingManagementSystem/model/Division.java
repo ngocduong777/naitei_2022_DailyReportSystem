@@ -62,5 +62,6 @@ public class Division extends BaseEntity {
 	public void setUsers(List<User> users) {
 		this.users = users;
 	}
+	
 
 }

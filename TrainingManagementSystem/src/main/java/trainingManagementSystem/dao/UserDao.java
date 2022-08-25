@@ -34,7 +34,7 @@ public class UserDao {
 	}
 
 	// get user by id
-	public User getById(Long id, Boolean isLock) {
+	public User getById(int id, Boolean isLock) {
 		return hibernateTemplate.get(User.class, id);
 	}
 

@@ -36,7 +36,7 @@ public class UserServices {
 	}
 
 	// get by id
-	public User getById(Long id, Boolean isLock) {
+	public User getById(int id, Boolean isLock) {
 		try {
 			return userDao.getById(id, isLock);
 		} catch (Exception e) {

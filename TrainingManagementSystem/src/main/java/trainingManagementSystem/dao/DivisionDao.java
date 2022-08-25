@@ -16,6 +16,7 @@ import org.springframework.stereotype.Component;
 
 import trainingManagementSystem.model.Division;
 import trainingManagementSystem.model.Report;
+import trainingManagementSystem.model.User;
 
 @Component
 public class DivisionDao {
@@ -35,6 +36,8 @@ public class DivisionDao {
 	// save division
 	@Transactional
 	public void saveDivision(Division division) {
+//		User user = hibernateTemplate.get(User.class, userId);
+//		division.setManager(user);
 		hibernateTemplate.save(division);
 	}
 
