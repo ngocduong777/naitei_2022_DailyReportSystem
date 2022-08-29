@@ -68,22 +68,36 @@
 			</div>
 		</div>
 	</div>
-
 	<script>
-		// Search function
-		$("#searchInput").on("input", function(e) {
-			let keyword = e.target.value;
-			$(".userName").each(function(index) {
-				let convertedName = stringToSlug($(this).text());
-				// do not contain keyword				
-				if (convertedName.indexOf(stringToSlug(keyword)) == -1 
-						&& $(this).text().toLowerCase().indexOf(stringToSlug(keyword)) == -1) {
-					$(this).parent().addClass("visually-hidden");
-				} else {
-					$(this).parent().removeClass("visually-hidden");
-				}
-			})
-		})
+		$("#searchInput")
+				.on(
+						"input",
+						function(e) {
+							let keyword = e.target.value;
+							$(".userName")
+									.each(
+											function(index) {
+												let convertedName = stringToSlug($(
+														this).text());
+												// do not contain keyword				
+												if (convertedName
+														.indexOf(stringToSlug(keyword)) == -1
+														&& $(this)
+																.text()
+																.toLowerCase()
+																.indexOf(
+																		stringToSlug(keyword)) == -1) {
+													$(this).parent().addClass(
+															"visually-hidden");
+												} else {
+													$(this)
+															.parent()
+															.removeClass(
+																	"visually-hidden");
+												}
+											})
+						})
+
 		function stringToSlug(str) {
 			// remove accents
 			var from = "àáãảạăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệđùúủũụưừứửữựòóỏõọôồốổỗộơờớởỡợìíỉĩịäëïîöüûñçýỳỹỵỷ", to = "aaaaaaaaaaaaaaaaaeeeeeeeeeeeduuuuuuuuuuuoooooooooooooooooiiiiiaeiiouuncyyyyy";

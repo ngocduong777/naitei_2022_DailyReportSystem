@@ -2,6 +2,7 @@ package trainingManagementSystem.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -56,5 +57,25 @@ public class AdminController {
 		return "redirect:/admin";
 
 	}
+	
+	// Edit a Division
+	@RequestMapping(value = { "/admin/divisions/edit"})
+	public String EditDivision(@RequestParam int id, ModelMap model) {
+		model.addAttribute("loadUsersNotinManagerID", userServices.loadUsersNotinManagerID());
+		model.addAttribute("currentManager", divisionService.getById(id).getManager());
+		model.addAttribute("division", divisionService.getById(id));
+		return "admins/editDivision";
+
+	}
+	
+	// Save Edit Division
+	@RequestMapping(value = { "/admin/divisions/save" }, method = RequestMethod.POST)
+	public String SaveDivision(@ModelAttribute("division") Division division, ModelMap model) {
+		division.setManager(userServices.getById(division.getManager().getId(), null));
+		divisionService.updateDivision(division);
+		return "redirect:/admin";
+	}
+
+	
 
 }

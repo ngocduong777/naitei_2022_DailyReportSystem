@@ -87,4 +87,10 @@ public class DivisionDao {
 			e.printStackTrace();
 		}
 	}
+	
+	// update Division
+	@Transactional
+	public void updateDivision(Division division) {
+		hibernateTemplate.update(division);
+	}
 }

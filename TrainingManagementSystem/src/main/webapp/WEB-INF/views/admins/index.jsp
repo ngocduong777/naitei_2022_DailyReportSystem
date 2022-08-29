@@ -43,8 +43,7 @@
 						<th scope="row">${division.id}</th>
 						<td>${division.name}</td>
 						<td>${division.getManager().getId()}</td>
-						<td><i class="fas fa-edit EditIcon me-3"></i> <i
-							class="fas fa-trash-alt TrashIcon"></i></td>
+						<td><a href="${baseURL}/admin/divisions/edit?id=${division.id}"><i class="fas fa-edit EditIcon me-3"></i></a></td>
 						<td><a class="btn btn-warning seeDetailButton"
 							href="${baseURL}/admin/DivisionInfomation?id=${division.id}"
 							role="button">Xem chi tiết <i class="fas fa-eye"></i></a> <!-- Button trigger modal -->

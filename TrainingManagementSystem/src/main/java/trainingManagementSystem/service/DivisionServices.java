@@ -58,5 +58,14 @@ public class DivisionServices {
 			throw e;
 		}
 	}
+	
+	//update division
+	public void updateDivision(Division division) {
+		try {
+			divisionDao.updateDivision(division);
+		} catch (Exception e) {
+			throw e;
+		}
+	}
 
 }
