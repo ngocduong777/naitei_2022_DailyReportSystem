@@ -33,10 +33,8 @@
 
 			<form:label path="manager.id">Manager ID:</form:label>
 			<form:select path="manager.id">
-				<c:forEach items="${loadUsersNotinManagerID}" var="firstVar">
-					<form:option value="${firstVar}" label="${firstVar}"
-						selected="${selected}" />
-
+				<c:forEach items="${loadUsersNotinManagerID}" var="user">
+					<form:option value="${user.id}" label="${user.id} - ${user.name}" />
 				</c:forEach>
 			</form:select>
 
